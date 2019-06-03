@@ -29,4 +29,7 @@ slack_url: SLACK_URL
 slack_channel: SLACK_CHANNEL
 slack_username: SLACK_USERNAME
 slack_proxy: SLACK_PROXY
+slack_title_link: SLACK_TITLE_LINK
 slack_title_prefix: SLACK_TITLE_PREFIX
+slack_footer: SLACK_FOOTER
+slack_footer_icon: SLACK_FOOTER_ICON

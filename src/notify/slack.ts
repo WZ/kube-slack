@@ -28,6 +28,9 @@ export default class SlackNotifier {
 
 		let channel = item.channel || config.get('slack_channel');
 		let username = item.username || config.get('slack_username');
+		item.title_link = `${config.get('slack_title_link')}`,
+		item.footer = `${config.get('slack_footer')}`;
+		item.footer_icon = `${config.get('slack_footer_icon')}`;
 		delete item.channel;
 
 		return this.slack
