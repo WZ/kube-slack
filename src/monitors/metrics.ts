@@ -106,7 +106,7 @@ class PodMetrics extends EventEmitter {
 					pod.metadata.name
 				} has high ${type} utilization`,
 				color: 'danger',
-				title: `${pod.metadata.namespace}/${pod.metadata.name}`,
+				title: `${config.get('slack_title_prefix')} ${pod.metadata.namespace}/${pod.metadata.name}`,
 				text: `Container ${type} usage above ${threshold *
 					100}% threshold: *${parsedUsage} / ${parsedLimit}${unit}*`,
 				mrkdwn_in: ['text'],
@@ -126,7 +126,7 @@ class PodMetrics extends EventEmitter {
 					pod.metadata.name
 				} has normal ${type} utilization`,
 				color: 'good',
-				title: `${pod.metadata.namespace}/${pod.metadata.name}`,
+				title: `${config.get('slack_title_prefix')} ${pod.metadata.namespace}/${pod.metadata.name}`,
 				text: `Container ${type} at safe value *${parsedUsage} / ${parsedLimit}${unit}*`,
 				mrkdwn_in: ['text'],
 				_key: podIdentifier + '-recovery',

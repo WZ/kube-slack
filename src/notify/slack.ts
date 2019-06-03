@@ -32,7 +32,7 @@ export default class SlackNotifier {
 
 		return this.slack
 			.send({
-				text: item.text || 'Kubernetes Notification:',
+				text: ' ',
 				attachments: [item],
 				channel,
 				username

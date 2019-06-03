@@ -64,7 +64,7 @@ class PodStatus extends EventEmitter {
 					item.state.waiting.message
 				})`,
 				color: 'danger',
-				title: `${item.pod.metadata.namespace}/${item.pod.metadata.name}/${
+				title: `${config.get('slack_title_prefix')} ${item.pod.metadata.namespace}/${item.pod.metadata.name}/${
 					item.name
 				}`,
 				text: `Container entered status *${item.state.waiting.reason}*\n\`\`\`${
@@ -94,7 +94,7 @@ class PodStatus extends EventEmitter {
 					item.pod.metadata.name
 				}/${item.name} ready`,
 				color: 'good',
-				title: `${item.pod.metadata.namespace}/${item.pod.metadata.name}/${
+				title: `${config.get('slack_title_prefix')} ${item.pod.metadata.namespace}/${item.pod.metadata.name}/${
 					item.name
 				}`,
 				text: `Container entered status *${item.pod.status.phase}*\n${
